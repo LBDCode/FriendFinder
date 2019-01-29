@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>    
+
+    <title>Friend Finder</title>
+</head>
+<body>
+
+
+    <div class="container" style="max-width: 800px">
+        <form>
+            <h1>About You</h1>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required> 
+            </div>
+            <div class="form-group">
+                    <label for="image">Link to image URL</label>
+                    <input type="text" class="form-control" id="image" required>
+            </div>
+        </form>
+        <hr>
+        <form>
+            <h1>Survey Questions</h1>
+            <div class="form-group">
+                <label for="question1"><strong>Question 1:</strong><br>I enjoy having new experiences, meeting new people, and trying new things.</label>
+                <select class="form-control" id="question1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question2"><strong>Question 2:</strong><br>I thing it is better to be truthful than tactful.</label>
+                <select class="form-control" id="question2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question3"><strong>Question 3:</strong><br>I always keep a promise, even if it detriments me personally.</label>
+                <select class="form-control" id="question3">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question4"><strong>Question 4:</strong><br>I am modest about my achievements.</label>
+                <select class="form-control" id="question4">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question5"><strong>Question 5:</strong><br>I enjoy having a routine.</label>
+                <select class="form-control" id="question5">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question6"><strong>Question 6:</strong><br>I am willing to tell people when they are mistaken, even when it may be socially awkward.</label>
+                <select class="form-control" id="question6">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question7"><strong>Question 7:</strong><br>I believe hard work is more important than innate ability.</label>
+                <select class="form-control" id="question7">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question8"><strong>Question 8:</strong><br>I perfer working and competing as part of a team.</label>
+                <select class="form-control" id="question8">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question9"><strong>Question 9:</strong><br>I think it is important to set and track goals.</label>
+                <select class="form-control" id="question9">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question10"><strong>Question 10:</strong><br>I am easily disappointed.</label>
+                <select class="form-control" id="question10">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="survey-submit">Submit</button>
+        </form>   
+    <br>
+    </div>  
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="resultsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="resultsModalLabel">Your closest match:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <img id="match-image" style="max-width: 100%" src=''/>
+            <h2 id="match-name">Test</h2>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>
+  
+  
+
+    <a href="/api/friends">API Friends</a>
+   
+   <script>
+
+    $("#survey-submit").on("click", function(event) {
+    event.preventDefault();
+
+    // Here we grab the form elements
+    var newFriend = {
+      name: $("#name").val().trim(),
+      photo: $("#image").val().trim(),
+      scores: 
+        [
+        $("#question1").val().trim(),
+        $("#question2").val().trim(),
+        $("#question3").val().trim(),
+        $("#question4").val().trim(),
+        $("#question5").val().trim(),
+        $("#question6").val().trim(),
+        $("#question7").val().trim(),
+        $("#question8").val().trim(),
+        $("#question9").val().trim(),
+        $("#question10").val().trim(),
+        ],
+    
+    };
+
+    console.log(newFriend);
+
+    $.post("/api/friends", newFriend,
+      function(data) {
+        console.log(data.name);
+          
+        $("#match-image").attr("src", data.photo)
+        $("#match-name").text(data.name)
+
+        $("#resultsModal").modal("toggle");
+
+        $("#question1").val("");
+        $("#question2").val("");
+        $("#question3").val("");
+        $("#question4").val("");
+        $("#question5").val("");
+        $("#question6").val("");
+        $("#question7").val("");
+        $("#question8").val("");
+        $("#question9").val("");
+        $("#question10").val("");
+
+
+      });
+
+  });
+   
+   
+   </script> 
+</body>
+</html>
