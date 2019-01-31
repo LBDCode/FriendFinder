@@ -12,19 +12,15 @@ module.exports = function(app) {
         var newFriend = req.body;
         var bestMatchScore = null;
         var bestMatch;
-        var matches = [];
+        
 
         for (var i = 0; i < friendData.length; i++) {
-            var matchObj = {};
+
             var curMatchTotal = null;
             for (var j = 0; j < newFriend.scores.length; j++) {
                 curMatchTotal += Math.abs(newFriend.scores[j] - friendData[i].scores[j]);
             }
-            matchObj = {
-                name: friendData[i].name,
-                matchScore: curMatchTotal
-            }
-            matches.push(matchObj);
+
             if (bestMatchScore === null || curMatchTotal < bestMatchScore) {
                 bestMatchScore = curMatchTotal;                
                 bestMatch = {
